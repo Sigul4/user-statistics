@@ -1,0 +1,60 @@
+@import '../../../../styles/variables';
+
+.circle {
+  z-index: -10;
+  position: fixed;
+  width: 40vh;
+  height: 40vh;
+  border-radius: 50%;
+}
+
+.main {
+  background-color: $mainBlueColor;
+
+  &_top-left {
+    top: -21vh;
+    left: -18vh;
+  }
+
+  &_top-right {
+    right: -18vh;
+    top: -24vh;
+  }
+
+  &_bottom-left {
+    left: -1.7vh;
+    bottom: -30vh;
+  }
+
+  &_bottom-right {
+    right: -20vh;
+    bottom: -20vh;
+  }
+}
+
+.secondary {
+  background-color: $secondaryBlueColor;
+
+  &_top-left {
+    left: -6vh;
+    top: -28vh;
+  }
+
+  &_top-right {
+    right: -5vh;
+    top: -29vh;
+  }
+
+  &_bottom-left {
+    left: -21.8vh;
+    bottom: -20vh;
+  }
+
+  &_bottom-right {
+    right: -18vh;
+    bottom: -18vh;
+  }
+}
+
+
+
