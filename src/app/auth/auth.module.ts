@@ -14,7 +14,6 @@ const routes: Routes = [{ path: '', component: AuthComponent }];
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CircleModule,
     RouterModule.forChild(routes),
   ],
 })

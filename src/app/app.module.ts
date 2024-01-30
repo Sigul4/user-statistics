@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CircleModule } from './shared/components/circle/circle.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CircleModule,
   ],
   providers: [
       {

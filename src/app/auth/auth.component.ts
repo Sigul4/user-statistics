@@ -6,7 +6,7 @@ import { take } from 'rxjs';
 import { ACCESS_TOKEN, USER } from 'src/app/auth/auth.constants';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { LocalStorageService } from 'src/app/auth/services/local-storage.service';
-import { HOMEPAGE_ROUTE } from 'src/app/shared/constants/routes.constants';
+import { DASHBOARD_PAGE_ROUTE } from 'src/app/shared/constants/routes.constants';
 
 @Component({
   selector: 'app-auth',
@@ -52,7 +52,7 @@ export class AuthComponent implements OnInit {
         if (response) {
           this.localStorageService.set(ACCESS_TOKEN, response.token);
           this.localStorageService.set(USER, response);
-          this.authService.redirectTo(HOMEPAGE_ROUTE);
+          this.authService.redirectTo(DASHBOARD_PAGE_ROUTE);
         }
       });
   }

@@ -11,12 +11,12 @@ export const LOGIN_PAGE_ROUTE = 'auth';
 /**
  * Variable for dashboard page route
  */
-export const DASHBOARD_PAGE_ROUTE = 'dashboard';
+export const DASHBOARD_PAGE_ROUTE = 'userassessment';
 
 /**
  * Variable for user-assessment page route
  */
-export const USER_ASSESSMENT_PAGE_ROUTE = 'user-assessment/:id';
+export const USER_ASSESSMENT_PAGE_ROUTE = 'userassessment/graph/:id';
 
 /**
  * Variable for admin page route
