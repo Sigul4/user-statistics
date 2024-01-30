@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
 import { take } from 'rxjs';
 import { ACCESS_TOKEN, USER } from 'src/app/auth/auth.constants';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -16,18 +14,12 @@ import { DASHBOARD_PAGE_ROUTE } from 'src/app/shared/constants/routes.constants'
 })
 export class AuthComponent implements OnInit {
   public loginForm!: FormGroup;
-  public authPicture: SafeResourceUrl;
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private sanitizer: DomSanitizer,
     private localStorageService: LocalStorageService
-  ) {
-    this.authPicture = this.sanitizer.bypassSecurityTrustResourceUrl(
-      'assets/images/illustratin.png'
-    );
-  }
+  ) { }
 
   ngOnInit(): void {
     this.initializeForm();

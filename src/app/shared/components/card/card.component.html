@@ -1,0 +1,10 @@
+<mat-card class="card" (click)="navigateToDetails(data.id)">
+    <mat-card-header>
+      <mat-card-title>{{ data.name }}</mat-card-title>
+      <mat-card-subtitle>Resolved: {{ data.users_resolved }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="data.image_url" alt="{{ data.name }}">
+    <mat-card-content>
+      Active: {{ data.active ? 'Yes' : 'No' }}
+    </mat-card-content>
+</mat-card>

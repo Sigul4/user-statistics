@@ -1,0 +1,11 @@
+.card {
+  width: 300px;
+  margin: 10px;
+}
+.card-avatar {
+  background-image: url("https://placehold.it/40x40"); // Placeholder for avatar
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
