@@ -33,7 +33,7 @@ export class AuthService {
      * @returns {LoginResponse} LoginResponse Response from the server
      */
     public login(loginData: LoginData): Observable<LoginResponse> {
-        return this.http.post<LoginResponse>(this.config.getBaseUrl('auth/login'), loginData);
+        return this.http.post<LoginResponse>(this.config.getBaseUrl('login'), loginData);
     }
 
     /**

@@ -1,0 +1,33 @@
+@import "variables";
+
+.custom-button {
+  width: 100%;
+  border: 1px solid $whiteColor;
+  color: $whiteColor;
+  border-radius: 5px;
+  background-color: $mainBlueColor;
+  cursor: pointer;
+  transition: .5s;
+
+  &.selected,
+  &:hover {
+    color: $blackColor !important;
+    background-color: $hoverColor !important;
+  }
+
+  &:disabled {
+    background-color: $disabledBGColor;
+    color: $disabledTextColor;
+
+    &:active {
+      border-color: $whiteColor;
+      background-color: $disabledBGColor;
+      color: $disabledTextColor;
+    }
+  }
+
+  &:active {
+    border-color: $mainBlueColor;
+    background-color: $whiteColor;
+  }
+}

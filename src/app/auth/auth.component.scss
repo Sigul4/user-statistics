@@ -1,0 +1,83 @@
+@import "../../styles/variables";
+
+:host {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.auth {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+
+  &__picture {
+    object-fit: none;
+    height: 500px;
+    position: absolute;
+    left: 5vw;
+
+    img {
+      min-width: 400px;
+      max-width: none;
+    }
+  }
+
+  &__form {
+    position: absolute;
+    width: 400px;
+    z-index: 2;
+    flex: 0 1 55%;
+    right: 5vw;
+    display: flex;
+    justify-content: center;
+    box-shadow: -2px 0px 15px 15px $loginFormBackgroundColor;
+    background: $loginFormBackgroundColor;
+    padding: 11vh 0;
+
+    .form {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__title {
+        font-size: 2.8em;
+        font-weight: 600;
+        margin-bottom: 51px;
+      }
+
+      &__fields {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        
+        .form__inputs {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
+      &__input {
+        font-size: 1.25em;
+        line-height: 1.5em;
+        font-weight: 400;
+        padding: 10px 20px;
+      }
+
+      &__btn {
+        font-size: 1.56em;
+        padding: 20px 20px;
+      }
+    }
+  }
+}

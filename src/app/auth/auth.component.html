@@ -1,1 +1,17 @@
-<p>auth works!</p>
+<section class="auth">
+    <div class="auth__element auth__picture">
+        <img [src]="authPicture" alt="Auth Picture" />
+    </div>
+    <div class="auth__element auth__form">
+        <form class="form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <h2 class="form__title">Log In</h2>
+            <div class="form__fields">
+                <div class="form__inputs">
+                    <input type="text" class="custom-input form__input" placeholder="Email" formControlName="email" />
+                    <input type="password" class="custom-input form__input" placeholder="Password" formControlName="password" />
+                </div>
+                <button class="custom-button form__btn" [disabled]="this.loginForm.invalid">Login</button>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,20 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthComponent } from './auth.component';
-import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { CircleModule } from '../shared/components/circle/circle.module';
+import { AuthComponent } from './auth.component';
 
-const routes: Routes = [
-  { path: '', component: AuthComponent },
-];
+const routes: Routes = [{ path: '', component: AuthComponent }];
 
 @NgModule({
-  declarations: [
-    AuthComponent,
-  ],
+  declarations: [AuthComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forChild(routes),
   ],
 })
