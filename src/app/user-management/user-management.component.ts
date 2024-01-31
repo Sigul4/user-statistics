@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { UserManagementService } from './services/user-management.service';
+import { UserDto } from 'src/app/shared/interfaces/user-dto.interface';
 
 @Component({
   selector: 'app-user-management',
@@ -8,24 +9,19 @@ import { UserManagementService } from './services/user-management.service';
   styleUrls: ['./user-management.component.scss']
 })
 export class UserManagementComponent {
-  public users: any[] = [ {
-    "first_name": "Admin",
-    "last_name": "Deepersignals",
-    "role": "Admin",
-    "token": "QWRtaW5Vc2Vy"
-  },];
+  public users: UserDto[] = [];
   private unsubscribe$ = new Subject<void>();
 
   constructor(private userService: UserManagementService) {}
 
   ngOnInit(): void {
-    // this.loadUsers();
+    this.loadUsers();
   }
 
   loadUsers(): void {
     this.userService.getUsers()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(users => {
+      .subscribe((users: UserDto[]) => {
         this.users = users;
       });
   }

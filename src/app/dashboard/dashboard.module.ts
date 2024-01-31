@@ -3,17 +3,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { CardModule } from '../shared/components/card/card.module';
+
+import { CardModule } from 'src/app/shared/components/card/card.module';
 import { DashboardComponent } from './dashboard.component';
 
-const routes: Routes = [
-  { path: '', component: DashboardComponent },
-];
+const routes: Routes = [{ path: '', component: DashboardComponent }];
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-  ],
+  declarations: [DashboardComponent],
   imports: [
     CardModule,
     CommonModule,

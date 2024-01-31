@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { take } from 'rxjs';
+
 import { ACCESS_TOKEN, USER } from 'src/app/auth/auth.constants';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { LocalStorageService } from 'src/app/auth/services/local-storage.service';
@@ -19,7 +21,7 @@ export class AuthComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private localStorageService: LocalStorageService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -32,13 +34,10 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  /**
-   * Submit login form method
-   * @returns {void}
-   */
   public onSubmit(): void {
     const loginData = this.loginForm.value;
-    this.authService.login(loginData)
+    this.authService
+      .login(loginData)
       .pipe(take(1))
       .subscribe((response) => {
         if (response) {

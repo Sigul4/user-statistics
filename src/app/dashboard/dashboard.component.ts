@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Subject, takeUntil } from 'rxjs';
+
 import { DashboardService } from './services/dashboard.service';
 import { ReportData } from '../shared/interfaces/report-data.interface';
+import { LOADING_REPORTS_ERROR } from '../shared/constants/error.constants';
 
 @Component({
   selector: 'app-dashboard',
@@ -31,7 +34,7 @@ export class DashboardComponent implements OnInit {
           this.reports = reports;
         },
         (error) => {
-          console.error('Error loading reports:', error);
+          console.error(LOADING_REPORTS_ERROR, error);
         }
       );
   }

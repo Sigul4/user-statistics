@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CircleComponent } from './circle.component';
 
 @NgModule({
-    declarations: [CircleComponent],
-    exports: [CircleComponent],
-    imports: [CommonModule],
+  declarations: [CircleComponent],
+  exports: [CircleComponent],
+  imports: [CommonModule],
 })
 export class CircleModule {}

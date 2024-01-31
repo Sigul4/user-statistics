@@ -5,14 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-const routes: Routes = [
-  { path: '', component: ReportGraphComponent },
-];
+const routes: Routes = [{ path: '', component: ReportGraphComponent }];
 
 @NgModule({
-  declarations: [
-    ReportGraphComponent,
-  ],
+  declarations: [ReportGraphComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
