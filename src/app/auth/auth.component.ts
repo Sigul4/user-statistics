@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { take } from 'rxjs';
 
-import { ACCESS_TOKEN, USER } from 'src/app/auth/auth.constants';
+import { ACCESS_TOKEN, ROLE } from 'src/app/auth/auth.constants';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { LocalStorageService } from 'src/app/auth/services/local-storage.service';
 import { DASHBOARD_PAGE_ROUTE } from 'src/app/shared/constants/routes.constants';
@@ -42,7 +42,7 @@ export class AuthComponent implements OnInit {
       .subscribe((response) => {
         if (response) {
           this.localStorageService.set(ACCESS_TOKEN, response.token);
-          this.localStorageService.set(USER, response);
+          this.localStorageService.set(ROLE, response.role);
           this.authService.redirectTo(DASHBOARD_PAGE_ROUTE);
         }
       });

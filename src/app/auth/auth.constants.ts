@@ -1,3 +1,3 @@
 export const ACCESS_TOKEN = 'access_token';
 
-export const USER = 'user';
+export const ROLE = 'role';

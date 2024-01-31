@@ -1,6 +1,8 @@
 export interface UserDto {
-  first_name: string;
-  last_name: string;
+  name: string;
+  lastName: string;
+  dateOfBirth: string;
+  education: string;
+  position: string;
   role: string;
-  token: string;
 }
