@@ -1,0 +1,33 @@
+@import "../../../../styles/variables";
+
+:host {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+
+    mat-toolbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: $mainBlueColor;
+
+      .spacer {
+        flex: 1 1 auto;
+      }
+
+      a {
+        padding: 0 15px;
+      }
+
+      .back-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+      
+      .back-icon {
+        color: white;
+        font-size: 24px;
+      }
+    }
+}
