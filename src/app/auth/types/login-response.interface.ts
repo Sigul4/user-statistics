@@ -1,6 +1,3 @@
-/**
- * Login response interface
- */
 export interface LoginResponse {
     firstName: string,
     lastName: string,

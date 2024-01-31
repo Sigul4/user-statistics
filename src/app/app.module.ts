@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment.prod';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CircleModule } from './shared/components/circle/circle.module';
+import { ToolbarModule } from './shared/components/toolbar/toolbar.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { CircleModule } from './shared/components/circle/circle.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ToolbarModule,
     CircleModule,
   ],
   providers: [

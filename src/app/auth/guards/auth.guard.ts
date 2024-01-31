@@ -12,7 +12,7 @@ export class AuthGuard implements CanLoad {
     private router: Router
   ) {}
 
-  canLoad(): boolean | UrlTree {
+  public canLoad(): boolean | UrlTree {
     const token = this.localStorageService.get(ACCESS_TOKEN);
     return token ? true : this.router.createUrlTree(['/auth']);
   }

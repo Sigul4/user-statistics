@@ -1,25 +1,26 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanLoad, Router } from '@angular/router';
 
-import { LocalStorageService } from '../services/local-storage.service';
+import { DASHBOARD_PAGE_ROUTE } from 'src/app/shared/constants/routes.constants';
+import { LocalStorageService } from 'src/app/auth/services/local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuard implements CanActivate {
+export class AdminGuard implements CanLoad {
 
   constructor(
     private localStorageService: LocalStorageService,
     private router: Router
   ) {}
 
-  canActivate(): boolean {
+  public canLoad(): boolean {
     const role = this.localStorageService.get<string>('role');
 
-    if (role === 'admin') {
+    if (role === 'Admin') {
       return true;
     } else {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate([DASHBOARD_PAGE_ROUTE]);
       return false;
     }
   }
