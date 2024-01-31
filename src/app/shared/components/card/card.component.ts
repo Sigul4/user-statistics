@@ -13,6 +13,6 @@ export class CardComponent {
   constructor(private router: Router) {}
 
   public navigateToDetails(id: number): void {
-    this.router.navigate(['/api/userassessments/graph', id]);
+    this.router.navigate(['/userassessment/graph', id]);
   }  
 }

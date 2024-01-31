@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserAssessmentReportComponent } from './user-assessment-report.component';
+import { ReportGraphComponent } from './report-graph.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-  { path: '', component: UserAssessmentReportComponent },
+  { path: '', component: ReportGraphComponent },
 ];
 
 @NgModule({
   declarations: [
-    UserAssessmentReportComponent,
+    ReportGraphComponent,
   ],
   imports: [
     CommonModule,
@@ -20,4 +20,4 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
 })
-export class UserAssessmentReportModule {}
+export class ReportGraphModule {}
