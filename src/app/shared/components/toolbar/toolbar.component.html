@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="back-button" (click)="goBack()">
+        <mat-icon class="back-icon">arrow_back</mat-icon>
+    </button>
+    <span>User Statistic</span>
+    <span class="spacer"></span>
+    <a [routerLink]="DASHBOARD" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+    <a *ngIf="isLoginIn" [routerLink]="LOGIN" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="logOut()">Log Out</a>
+    <a *ngIf="isAdmin" [routerLink]="USER_MANAGEMENT" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">User Management</a>
+</mat-toolbar>
+  
