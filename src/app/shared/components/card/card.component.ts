@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ReportData } from '../../interfaces/report-data.interface';
+import { ReportData } from 'src/app/shared/interfaces/report-data.interface';
 import { Router } from '@angular/router';
 
 @Component({

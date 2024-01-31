@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 
 import { DashboardService } from './services/dashboard.service';
-import { ReportData } from '../shared/interfaces/report-data.interface';
-import { LOADING_REPORTS_ERROR } from '../shared/constants/error.constants';
+import { ReportData } from 'src/app/shared//interfaces/report-data.interface';
+import { LOADING_REPORTS_ERROR } from 'src/app/shared/constants/error.constants';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +14,7 @@ import { LOADING_REPORTS_ERROR } from '../shared/constants/error.constants';
 export class DashboardComponent implements OnInit {
   public reports: ReportData[] = [];
   private unsubscribe$: Subject<void> = new Subject<void>();
+
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit(): void {
