@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 
 import { filter } from 'rxjs';
 
@@ -24,6 +24,7 @@ export class ToolbarComponent implements OnInit {
   public USER_MANAGEMENT = USER_MANAGEMENT_PAGE_ROUTE;
   public isAdmin!: boolean;
   public isLoginIn!: boolean;
+  public isAuthPage!: boolean
 
   constructor(
     private location: Location,
@@ -40,14 +41,17 @@ export class ToolbarComponent implements OnInit {
       .pipe(
         filter(
           (event) =>
-            event instanceof NavigationEnd &&
-            event.urlAfterRedirects !== USER_ASSESSMENT_PAGE_ROUTE &&
-            event.urlAfterRedirects !== this.USER_MANAGEMENT
-        )
-      )
-      .subscribe(() => {
-        this.isAdmin = this.localStorageService.get(ROLE) === 'Admin';
-        this.isLoginIn = !!this.localStorageService.get(ACCESS_TOKEN);
+          event instanceof NavigationEnd &&
+          event.urlAfterRedirects !== USER_ASSESSMENT_PAGE_ROUTE &&
+          event.urlAfterRedirects !== this.USER_MANAGEMENT
+          )
+          )
+          .subscribe((event: any) => {
+            if ((event as RouterEvent)?.url?.includes(this.LOGIN)) this.isAuthPage = true;
+            else this.isAuthPage = false;
+            
+            this.isAdmin = this.localStorageService.get(ROLE) === 'Admin';
+            this.isLoginIn = !!this.localStorageService.get(ACCESS_TOKEN);
       });
   }
 

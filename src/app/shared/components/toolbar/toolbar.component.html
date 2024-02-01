@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar *ngIf="!isAuthPage" color="primary">
     <button mat-icon-button class="back-button" (click)="goBack()">
         <mat-icon class="back-icon">arrow_back</mat-icon>
     </button>
