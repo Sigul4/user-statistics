@@ -1,11 +1,13 @@
 @import "../../styles/variables.scss";
 
 :host {
-  width: 100%;
+  width: 100%;    
+  padding: 16px;
+
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin: 64px 0 20px;
     background-color: $lightGreyColor;
 
     th,

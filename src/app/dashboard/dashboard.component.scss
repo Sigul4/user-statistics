@@ -2,6 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 16px;
+    margin-top: 64px;
   
     .card {
       flex: 0 0 calc(33.33% - 16px);
